@@ -25,7 +25,6 @@ public class Bullet : MonoBehaviour
     private IEnumerator DisabledBullet()
     {
         yield return new WaitForSeconds(_secondToDestroy);
-        Debug.Log(name + "destroy "+ Random.Range(0, 999));
         objectPool.ReturnToPool(gameObject);
     }
 }
