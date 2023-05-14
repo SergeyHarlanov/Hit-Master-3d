@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class IdleState : IState
 {
     private Player _player;
@@ -10,13 +8,9 @@ public class IdleState : IState
         {
             _player = GameObject.FindObjectOfType<Player>();
         }
-        
-        //проверяем сможем ли мы перезагрузить сцену, в случае если последний поинт
-        if (GameMananger.Instance.RestartGame())
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            return;
-        }
+        //пробуем перезагрузить сцену, в случае если последний поинт
+        GameMananger.Instance.RestartGame();
+    
         _player.IdleAnim();
         _player.LookToNextPoint();
     }

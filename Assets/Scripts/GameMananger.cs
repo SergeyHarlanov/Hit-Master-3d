@@ -42,8 +42,8 @@
             _wayPointController.NextPoint();
         }
 
-        public bool RestartGame()
+        public void RestartGame()
         {
-            return _wayPointController.RestartGame();
+             _wayPointController.RestartGame();
         }
     }

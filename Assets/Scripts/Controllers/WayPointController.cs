@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WayPointController
 {
@@ -53,8 +54,11 @@ public class WayPointController
         return _indexPoint;
     }
 
-    public bool RestartGame()
+    public void RestartGame()
     {
-        return _restartGame;
+        if (_restartGame)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }

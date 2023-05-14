@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //проверяем что бы противник находился на одном и том же с нами поинте
+        //проверяем что бы мы находились на одном и том же с player поинте и наносим себе урон
         if (other.CompareTag("Bullet") && GameMananger.Instance.GetIndexPoint() == transform.parent.GetSiblingIndex())
         {
 
